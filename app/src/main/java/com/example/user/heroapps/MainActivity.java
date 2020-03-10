@@ -20,20 +20,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        showRecyclerList();
-        recyclerView = findViewById(R.id.rv_hero_list);
-        recyclerView.setHasFixedSize(true);
-        listHero.addAll(DataHero.getListHero());
 
         bottomNavigationView = findViewById(R.id.activitymain_bottomnav);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
-    }
-
-    private void showRecyclerList() {
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        HeroesAdapter heroesAdapter = new HeroesAdapter(this);
-        heroesAdapter.setHeroesModels(listHero);
-        recyclerView.setAdapter(heroesAdapter);
     }
 
     @Override
